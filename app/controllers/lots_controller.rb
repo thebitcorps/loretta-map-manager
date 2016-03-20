@@ -4,7 +4,7 @@ class LotsController < ApplicationController
   # GET /lots
   # GET /lots.json
   def index
-    @lots = Lot.paginate(:page => params[:page], :per_page => 10).order('id ASC')
+    @lots = Lot.paginate(:page => params[:page], :per_page => 10, total_entries: Lot.count).order('id ASC')
   end
 
   # GET /lots/1
