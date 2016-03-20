@@ -4,7 +4,7 @@ class LotsController < ApplicationController
   # GET /lots
   # GET /lots.json
   def index
-    @lots = Lot.all
+    @lots = Lot.paginate(:page => params[:page], :per_page => 10).order('id ASC')
   end
 
   # GET /lots/1
@@ -43,6 +43,7 @@ class LotsController < ApplicationController
     respond_to do |format|
       if @lot.update(lot_params)
         format.html { redirect_to @lot, notice: 'Lot was successfully updated.' }
+        format.js {}
         format.json { render :show, status: :ok, location: @lot }
       else
         format.html { render :edit }

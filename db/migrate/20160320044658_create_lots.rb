@@ -3,7 +3,7 @@ class CreateLots < ActiveRecord::Migration
     create_table :lots do |t|
       t.string :number
       t.string :block
-      t.string :satage
+      t.string :stage
       t.decimal :square_meters
       t.string :status
       t.references :salesman, index: true, foreign_key: true
