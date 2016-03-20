@@ -1,0 +1,18 @@
+%p#notice= notice
+%h1 Listing Salesmen
+%table
+  %thead
+    %tr
+      %th Name
+      %th Lastname
+      %th{:colspan => "3"}
+  %tbody
+    - @salesmen.each do |salesman|
+      %tr
+        %td= salesman.name
+        %td= salesman.lastname
+        %td= link_to 'Show', salesman
+        %td= link_to 'Edit', edit_salesman_path(salesman)
+        %td= link_to 'Destroy', salesman, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Salesman', new_salesman_path

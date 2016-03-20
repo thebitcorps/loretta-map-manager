@@ -1,0 +1,26 @@
+%p#notice= notice
+%h1 Listing Lots
+%table
+  %thead
+    %tr
+      %th Number
+      %th Block
+      %th Satage
+      %th Square meters
+      %th Status
+      %th Salesman
+      %th{:colspan => "3"}
+  %tbody
+    - @lots.each do |lot|
+      %tr
+        %td= lot.number
+        %td= lot.block
+        %td= lot.satage
+        %td= lot.square_meters
+        %td= lot.status
+        %td= lot.salesman
+        %td= link_to 'Show', lot
+        %td= link_to 'Edit', edit_lot_path(lot)
+        %td= link_to 'Destroy', lot, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Lot', new_lot_path
