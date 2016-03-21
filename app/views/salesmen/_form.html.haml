@@ -2,18 +2,19 @@
   - if @salesman.errors.any?
     #error_explanation
       %h2
-        = pluralize(@salesman.errors.count, "error")
-        prohibited this salesman from being saved:
+        = pluralize(@salesman.errors.count, "error", "errores")
+        encontrados:
       %ul
-        - @salesman.errors.full_messages.each do |message|
-          %li= message
-  .field
-    = f.label :name
+        - @salesman.errors.messages.values.each do |message|
+          %li= message.first
+  .form-group
+    = f.label 'Nombres'
     %br/
-    = f.text_field :name
+    = f.text_field :name, {class: "form-control"}
   .field
-    = f.label :lastname
+    = f.label "Apellidos"
     %br/
-    = f.text_field :lastname
-  .actions
-    = f.submit
+    = f.text_field :lastname, {class: "form-control"}
+  %br/
+  .pull-right
+    = f.submit @salesman.name.blank? ? "Crear" : "Actualizar", class: "btn btn-primary"

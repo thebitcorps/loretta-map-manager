@@ -1,15 +1,10 @@
 class SalesmenController < ApplicationController
-  before_action :set_salesman, only: [:show, :edit, :update, :destroy]
+  before_action :set_salesman, only: [:edit, :update, :destroy]
 
   # GET /salesmen
   # GET /salesmen.json
   def index
     @salesmen = Salesman.all
-  end
-
-  # GET /salesmen/1
-  # GET /salesmen/1.json
-  def show
   end
 
   # GET /salesmen/new
@@ -28,7 +23,7 @@ class SalesmenController < ApplicationController
 
     respond_to do |format|
       if @salesman.save
-        format.html { redirect_to @salesman, notice: 'Salesman was successfully created.' }
+        format.html { redirect_to salesmen_path, notice: 'Nuevo vendedor creado correctamente.' }
         format.json { render :show, status: :created, location: @salesman }
       else
         format.html { render :new }
@@ -42,7 +37,7 @@ class SalesmenController < ApplicationController
   def update
     respond_to do |format|
       if @salesman.update(salesman_params)
-        format.html { redirect_to @salesman, notice: 'Salesman was successfully updated.' }
+        format.html { redirect_to salesmen_path, notice: 'Vendedor actualizado correctamente.' }
         format.json { render :show, status: :ok, location: @salesman }
       else
         format.html { render :edit }

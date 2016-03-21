@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20160320044658) do
   create_table "lots", force: :cascade do |t|
     t.string   "number"
     t.string   "block"
-    t.string   "satage"
+    t.string   "stage"
     t.decimal  "square_meters"
     t.string   "status"
     t.integer  "salesman_id"

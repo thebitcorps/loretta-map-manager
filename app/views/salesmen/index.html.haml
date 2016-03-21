@@ -1,9 +1,8 @@
-%p#notice= notice
-%h1
-  Vendedores
-  %small
-    = link_to 'Nuevo', new_salesman_path, class: "btn btn-primary pull-right"
 .col-md-2
 .col-md-8
+  %h1
+    Vendedores
+    %small
+      = link_to 'Nuevo', new_salesman_path, class: "btn btn-primary pull-right"
   .list-group
     = render @salesmen

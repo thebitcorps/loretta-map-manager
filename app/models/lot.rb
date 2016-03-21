@@ -1,6 +1,6 @@
 class Lot < ActiveRecord::Base
   belongs_to :salesman
-  before_save :check_status
+  before_update :check_status
 
   private
     def check_status
