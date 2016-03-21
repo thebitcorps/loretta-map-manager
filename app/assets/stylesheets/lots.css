@@ -1,4 +1,20 @@
-/*
-  Place all the styles related to the matching controller here.
-  They will automatically be included in application.css.
-*/
+.lot-list
+{
+	padding: 0px;
+}
+
+.lot-list-element
+{
+	margin: 10px 0px 10px 0px;
+}
+
+.corner-block
+{
+	background-color: #fAfAfA;
+	color: #333333;
+	padding: 5px 5px 5px 5px;
+	margin-left:0px;
+	margin-top: 0px;
+	margin-bottom: auto;
+	font-weight: bold;
+}

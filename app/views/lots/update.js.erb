@@ -1,1 +1,1 @@
-$('#lot11').html("<%= escape_javascript(@lot.status) %>");
+$('#lot' + "<%= @lot.id %>").html("<%= escape_javascript(render @lot) %>");

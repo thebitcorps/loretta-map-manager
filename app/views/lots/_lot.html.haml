@@ -1,0 +1,22 @@
+= form_for(lot, remote: true) do |f|
+  .row
+    .col-xs-2
+      %h4.corner-block.text-center
+        = lot.block.to_s.rjust(2, '0') + " #" + lot.number.to_s.rjust(2, '0')
+    .col-xs-9
+      .row
+        .col-sm-6
+          = f.select :salesman_id, Salesman.all.order(name: :asc, lastname: :asc).collect { |p| [ p.name + " " + p.lastname, p.id ] }, {include_blank: true}, {class: "form-control lot-list-element", onchange: "changelot(#{lot.id})"}
+        .col-sm-6
+          .row
+            .col-sm-9{style: "display: #{lot.salesman != nil ? '' : 'none'};"}
+              .col-xs-6
+                .lot-list-element
+                  = f.radio_button :status, 'reserved', {onchange: "changelot(#{lot.id})"}
+                  = label :status_reserved, 'Apartado'
+              .col-xs-6
+                .lot-list-element
+                  = f.radio_button :status, 'sold', {onchange: "changelot(#{lot.id})"}
+                  = label :status_reserved, 'Vendido'
+            .col-sm-3.text-center{style: "display: none;", id: "lot_update#{lot.id}"}
+              = f.submit "Actualizar", class: "btn btn-default lot-list-element"

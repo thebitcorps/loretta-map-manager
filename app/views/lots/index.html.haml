@@ -1,26 +1,8 @@
 %p#notice= notice
-%h1 Listing Lots
-%table
-  %thead
-    %tr
-      %th Number
-      %th Block
-      %th Satage
-      %th Square meters
-      %th Status
-      %th Salesman
-      %th{:colspan => "3"}
-  %tbody
-    - @lots.each do |lot|
-      %tr
-        %td= lot.number
-        %td= lot.block
-        %td= lot.satage
-        %td= lot.square_meters
-        %td{id: "lot#{lot.id}"}= lot.status
-        %td= lot.salesman
-        %td= link_to 'Show', lot
-        %td= link_to 'Edit', edit_lot_path(lot)
-        %td= link_to 'Destroy', lot, method: :delete, data: { confirm: 'Are you sure?' }
-%br/
-= will_paginate @posts, :previous_label => 'Anterior', :next_label => 'Siguiente',renderer: BootstrapPagination::Rails, :inner_window => 1
+%h1 Terrenos
+.list-group
+  - @lots.each do |lot|
+    .list-group-item.lot-list{id: "lot#{lot.id}"}
+      =render lot
+.text-center
+  = will_paginate @posts, :previous_label => 'Anterior', :next_label => 'Siguiente',renderer: BootstrapPagination::Rails, :inner_window => 1

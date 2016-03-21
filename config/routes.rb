@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :lots
+  resources :lots, only: [:update, :index]
   resources :salesmen
   devise_for :users
   root 'pages#home'
