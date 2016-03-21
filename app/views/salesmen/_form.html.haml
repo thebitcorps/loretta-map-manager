@@ -17,4 +17,4 @@
     = f.text_field :lastname, {class: "form-control"}
   %br/
   .pull-right
-    = f.submit @salesman.name.blank? ? "Crear" : "Actualizar", class: "btn btn-primary"
+    = f.submit @salesman.id.blank? ? "Crear" : "Actualizar", class: "btn btn-primary"

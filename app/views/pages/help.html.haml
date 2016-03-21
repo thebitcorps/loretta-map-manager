@@ -1,2 +1,121 @@
-%h1 Pages#help
-%p Find me in app/views/pages/help.html.erb
+%h1.page-header.link Ayuda
+%p.lead
+  Aquí encontrara una breve referencia a las características de sistema, como indicar cambios en la información de los terrenos, así como registrar vendedores para ser asociados a terrenos en particular.
+%br
+%h3.link Barra de Herramientas
+%h4
+  %p
+    La barra de herramientas le proporciona un rápido acceso a las características del sistema, ayuda e información sobre esta plataforma.
+.thumbnail
+  = image_tag "1.png"
+%h4
+  %p
+    Los accesos en orden son:
+  %ul
+    %li
+      Manager: Página principal donde se encuentra las herramientas de edición de los terrenos.
+  %ul
+    %li
+      Vendedores: Pagina de manejo y registro de nuevos nombres de vendedores.
+  %ul
+    %li
+      Ayuda: Esta página de ayuda.
+  %ul
+    %li
+      Acerca de Map Manager: Le ofrece información acerca de este sistema.
+  %ul
+    %li
+      Nombre del usuario  Indica el nombre de la cuenta usada.
+  %ul
+    %li
+      Cerrar sesión  Termina la sesión actual.
+%br
+%h3.link Manejador de terrenos
+%h4
+  %p
+    Es la página principal, aquí puede asignar nueva información acerca del estado del terreno y relacionarlo con alguno de los vendedores registrados en el sistema.
+%br
+%br
+.thumbnail
+  = image_tag "2.png"
+%h4
+  %p
+    Cuando un terreno no ha sido asignado a ningún vendedor, aparecerá solo un cuadro de selección baso, hasta ese momento el terreno está considerado como disponible.
+%br
+%br
+.thumbnail
+  = image_tag "3.png"
+%h4
+  %p
+    Para comenzar a asignar información a un terreno despliegue el <b>cuadro de selección</b> asociado al terreno que desea manipular, este cuadro despliega una lista de los vendedores registrados en el sistema y escoja el vendedor correspondiente.
+%br
+%br
+.thumbnail
+  = image_tag "4.png"
+%h4
+  %p
+    Al seleccionar un vendedor de la lista o cambiar el que ya ha sido seleccionado, aparecerá el botón "Actualizar" que le permitirá asociar el vendedor seleccionado al terreno.
+%br
+%br
+.thumbnail
+  = image_tag "5.png"
+%h4
+  %p
+    Cuando un terreno tiene un vendedor asociado podrá observar un par de indicadores que le permiten cambiar el estado en el que se encuentra ("Apartado" o "Vendido").
+%br
+%br
+.thumbnail
+  = image_tag "6.png"
+%h4
+  %p
+    Al cambiar a alguno de los indicadores nuevamente aparecerá el botón "Actualizar" que le permitirá guardar los cambios.
+%br
+%br
+.thumbnail
+  = image_tag "7.png"
+%h4
+  %p
+    En la parte inferior del listado de terrenos se encuentra la  barra de paginación que le permitirá navegar entre listados de 10 terrenos por página.
+%br
+%h3.link Manejador de vendedores
+%h4
+  %p
+    En esta página encontrara el listado de los vendedores registrados en el sistema, agregar nuevos registros, editar los existentes o eliminar los registros no deseados.
+%br
+.thumbnail
+  = image_tag "8.png"
+%h4
+  %p
+    Puede comenzar presionando el botón "Nuevo" en la parte superior derecha, que lo llevara al formulario de registro de un nuevo vendedor.
+%br
+%br
+.thumbnail
+  = image_tag "9.png"
+%h4
+  %p
+    El formulario solo cuenta con 2 campos "Nombres" y "Apellidos" que son requeridos para crear un nuevo registro.
+%br
+%br
+.thumbnail
+  = image_tag "10.png"
+%h4
+  %p
+    En el caso de que intente crear un vendedor sin rellenar alguno de los campos, el sistema le indicara los campos faltantes para evitar registros incompletos.
+%br
+%br
+.thumbnail
+  = image_tag "11.png"
+%h4
+  %p
+    Al presionar el botón "crear" se creara un nuevo registro de vendedor.
+%br
+%br
+.thumbnail
+  = image_tag "12.png"
+%h4
+  %p
+    Puede editar o eliminar registros de vendedores.
+
+.alert.alert-warning{role: "alert"}
+  %h4
+    %p <b>Nota:</b> Al eliminar un registro de algún vendedor que ya ha sido previamente asociado a un terreno, se perderá tal información y los terrenos asociados regresaran al estado de "Disponible".

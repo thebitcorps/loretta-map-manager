@@ -44,6 +44,6 @@ class LotsControllerTest < ActionController::TestCase
       delete :destroy, id: @lot
     end
 
-    assert_redirected_to lots_path
+    assert_redirected_to manager_path
   end
 end
