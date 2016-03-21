@@ -1,0 +1,5 @@
+.list-group-item
+  = salesman.lastname + " " + salesman.name
+  .btn-group.pull-right.salesman-list{"aria-label" => "...", :role => "group"}
+    = link_to 'Editar', edit_salesman_path(salesman), class: "btn btn-default"
+    = link_to 'Eliminar', salesman, method: :delete, data: { confirm: '¿Esta seguro de eliminar este vendedor?' }, class: "btn btn-danger"

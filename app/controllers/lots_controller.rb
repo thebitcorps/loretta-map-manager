@@ -11,9 +11,6 @@ class LotsController < ApplicationController
   # PATCH/PUT /lots/1.json
   def update
     respond_to do |format|
-      if @lot.salesman_id != lot_params[:salesman_id]
-        @lot.status = "reserved"
-      end
       if @lot.update(lot_params)
         format.html { redirect_to @lot, notice: 'Lot was successfully updated.' }
         format.js {}

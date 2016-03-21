@@ -1,7 +1,7 @@
 = form_for(lot, remote: true) do |f|
   .row
     .col-xs-2
-      %h4.corner-block.text-center
+      %h4.text-center
         = lot.block.to_s.rjust(2, '0') + " #" + lot.number.to_s.rjust(2, '0')
     .col-xs-9
       .row
