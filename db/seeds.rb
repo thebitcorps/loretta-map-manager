@@ -1,4 +1,4 @@
-#User.create email: "david@thebitcorps.com", username: "development", password: "thebitkorns", password_confirmation: "thebitkorns"
+User.create email: "david@thebitcorps.com", username: "development", password: "thebitkorns", password_confirmation: "thebitkorns"
 
 stages_numbers = [40, 30, 20, 55, 37, 35, 19, 60, 6, 22, 38, 39, 38, 36, 38];
 areas = [   [612.6514, 315.8473, 266.7539, 240.3894, 233.4197, 228.16, 238.1450, 243.0544, 226.4084, 250.1144, 240.419, 217.4628, 217.2441, 229.2576, 227.2008, 219.7621, 212.6522, 228.976, 224.9887, 223.2771, 224.3227, 223.5536, 222.7819, 218.0849, 223.7636, 223.5520, 223.3404, 218.4093, 221.3741, 219.9457, 216.0064, 221.9619, 221.4071, 220.7936, 223.9728, 220.6810, 214.2474, 196.2062, 247.7553, 242.8248],

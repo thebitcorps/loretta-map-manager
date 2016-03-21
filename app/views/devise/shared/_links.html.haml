@@ -1,5 +1,7 @@
 - if controller_name != 'sessions'
-  = link_to "Log in", new_session_path(resource_name)
+  .btn-group-justified{"aria-label" => "Justified button group", :role => "group"}
+    .btn-group{:role => "group"}
+      = link_to "Iniciar sesión", new_session_path(resource_name), class: "btn btn-default"
   %br/
 - if devise_mapping.registerable? && controller_name != 'registrations'
   = link_to "Sign up", new_registration_path(resource_name)
