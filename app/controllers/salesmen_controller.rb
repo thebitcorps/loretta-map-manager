@@ -50,6 +50,7 @@ class SalesmenController < ApplicationController
   # DELETE /salesmen/1
   # DELETE /salesmen/1.json
   def destroy
+    @salesman.lots.update_all status: "available" if @salesman.lots.any?
     @salesman.destroy
     respond_to do |format|
       format.html { redirect_to salesmen_url, notice: 'Salesman was successfully destroyed.' }
