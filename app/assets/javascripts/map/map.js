@@ -71,6 +71,10 @@ function zoomToFeature(e)
 	$('#mymodal').modal('show');
 	currentIndex = terrainsData.features.indexOf(e.target.feature);
 	setTimeout(function() {onClickLot(currentIndex)}, 150);
+	$( "#block" ).text(e.target.feature.properties.block);
+	$( "#number" ).text(e.target.feature.properties.number);
+	$( "#area" ).text(e.target.feature.properties.square_meters + "m" + String.fromCharCode(178));
+	$( "#avi" ).text(e.target.feature.properties.status == 'available' ? 'Dispobible' : 'No Disponible');
 }
 
 
@@ -137,8 +141,7 @@ function onClickLot(number)
 	canvas.width = width;
 	canvas.height = height;
 
-	ctx.strokeStyle="#fff"; // not working :(
-	ctx.fillStyle = "rgb(242,240,166)";
+	ctx.fillStyle = "#ccff66";
 	ctx.lineWidth=1;
 	ctx.beginPath();
 	lot.forEach(function(entry)
@@ -148,14 +151,16 @@ function onClickLot(number)
 	ctx.closePath();
 	ctx.fill();
 
-	ctx.fillStyle = "#3c763d";
-	ctx.font = "16px Lato";
+	ctx.fillStyle = "#303030";
+	ctx.font = "bold 16px Courier";
 	ctx.textAlign = "center";
 	for (i = 0; i < numbers.length; i++)
 	{
 		ctx.fillText(numbers[i] + "m", side[i][0] * fixed + width / 2, -side[i][1] * fixed + height / 2);
 	}
 	//ctx.fillText(terrainsData.features[number].properties.square_meters + "m" + String.fromCharCode(178), width / 2, height / 2);
+
+
 }
 
 
