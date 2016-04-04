@@ -74,7 +74,7 @@ function zoomToFeature(e)
 	$( "#block" ).text(e.target.feature.properties.block);
 	$( "#number" ).text(e.target.feature.properties.number);
 	$( "#area" ).text(e.target.feature.properties.square_meters + "m" + String.fromCharCode(178));
-	$( "#avi" ).text(e.target.feature.properties.status == 'available' ? 'Dispobible' : 'No Disponible');
+	$( "#avi" ).text(e.target.feature.properties.status == 'available' ? 'Disponible' : 'No Disponible');
 }
 
 
