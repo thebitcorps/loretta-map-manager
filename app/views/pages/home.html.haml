@@ -4,12 +4,12 @@
 		%title Loretta
 		%meta{:charset => "utf-8"}/
 		%meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
-		%link{:href => "http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css", :rel => "stylesheet"}/
+		%link{:href => "https://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css", :rel => "stylesheet"}/
 		= stylesheet_link_tag "map"
 	%body{onresize: "onClickLot(currentIndex)"}
 
 		#map
-		%script{:src => "http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"}
+		%script{:src => "https://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"}
 		= javascript_include_tag "map/map"
 
 		#mymodal.modal.fade{"aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
