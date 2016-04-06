@@ -11,16 +11,16 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
 	id: 'mapbox.streets'
 }).addTo(map);
 
-// --------------- Reques for terrains status ----------------------- /
+// --------------- Requires for terrains status ----------------------- /
 
 
 function style(feature) {
 	return {
 		weight: 1.5,
-		opacity: (feature.properties.status == 'available' ? 1 : 0.5),
+		opacity: (feature.properties.active ? (feature.properties.status == 'available' ? 1 : 0.5) : 0.0),
 		color: (feature.properties.status == 'available' ? '#4dff4d' : '#808080'),
 		dashArray: '2',
-		fillOpacity: (feature.properties.status == 'available' ? 1 : 0.2),
+		fillOpacity: (feature.properties.active ? (feature.properties.status == 'available' ? 1 : 0.2) : 0.0),
 		fillColor: (feature.properties.status == 'available' ? "#fafafa" : '#fafafa')
 	};
 }
@@ -68,6 +68,7 @@ function resetHighlight(e)
 
 function zoomToFeature(e)
 {
+	if(!e.target.feature.properties.active) return;
 	$('#mymodal').modal('show');
 	currentIndex = terrainsData.features.indexOf(e.target.feature);
 	setTimeout(function() {onClickLot(currentIndex)}, 150);
