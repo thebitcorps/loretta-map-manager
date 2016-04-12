@@ -44,13 +44,13 @@ body
 	position: absolute;
 	width: 100%;
 	bottom: 0;
-	z-index: 100000;
+	z-index: 1000;
 	background-color: rgba(0,144,48,0.5);
 }
 
 .logo
 {
-	margin-top: -100px;
+	margin-top: -130px;
 	height: 100px;
 }
 
@@ -58,4 +58,34 @@ body
 {
 	color: white;
 	margin-top: 0;
+}
+
+.info-map
+{
+	width: 200px;
+	margin-left: auto;
+	margin-right: 40px;
+	margin-top: -130px;
+}
+
+.enabled
+{
+	background-color: white;
+	padding: 1px 3px 5px 3px;
+	border-width: 3px;
+	border-style: dotted;
+	border-color: #4dff4d;
+	color: #4dff4d;
+	max-width: 200px;
+}
+
+.disabled
+{
+	background-color: #F0F0F0;
+	padding: 1px 3px 5px 3px;
+	border-width: 3px;
+	border-style: dotted;
+	border-color: #808080;
+	color: #808080;
+	max-width: 200px;
 }
